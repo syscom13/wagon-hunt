@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @today = Date.today
+    @products = Product.all
   end
   def team
     @members = ["Nico", "Romain", "Julie"]

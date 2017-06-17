@@ -1,0 +1,23 @@
+<%= simple_form_for @product do |f| %>
+  <%= f.input :name, placeholder: "Google", label: "Nom de produit:" %>
+  <%= f.input :url, placeholder: "https://google.com", label: "URL du produit:" %>
+  <%= f.button :submit, "Soumettre", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Back", products_path, class: "btn btn-success" %>
+
+<!-- <form action="/products" method="post">
+
+  <div class="form-group">
+    <label for="name">Nom de produit:</label>
+    <input type="text" name="product[name]" class="form-control" placeholder="Google" id="name">
+  </div>
+
+  <div class="form-group">
+    <label for="url">URL du produit:</label>
+    <input type="text" name="product[url]" class="form-control" placeholder="https://google.com" id="url">
+  </div>
+
+  <input type="submit" value="Soumettre" class="btn btn-primary">
+
+</form> -->
