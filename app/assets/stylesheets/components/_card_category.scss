@@ -1,0 +1,16 @@
+.card-category {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+  background: $blue;
+  &:link, &:visited {
+    color: #fff;
+  }
+  &:hover, &:active {
+    color: #fff;
+    text-decoration: none;
+  }
+}
