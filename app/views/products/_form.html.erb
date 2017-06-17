@@ -1,7 +1,8 @@
 <%= simple_form_for @product do |f| %>
-  <%= f.input :name, placeholder: "Google", label: "Nom de produit:" %>
-  <%= f.input :url, placeholder: "https://google.com", label: "URL du produit:" %>
-  <%= f.button :submit, "Soumettre", class: "btn btn-primary" %>
+  <%= f.input :name, placeholder: "Google", label: "Product Name" %>
+  <%= f.input :url, placeholder: "https://google.com", label: "Product URL" %>
+  <%= f.input :tagline, placeholder: "Don't be evil", label: "Product Tagline" %>
+  <%= f.button :submit, "Submit", class: "btn btn-primary" %>
 <% end %>
 
 <%= link_to "Back", products_path, class: "btn btn-success" %>
