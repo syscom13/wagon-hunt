@@ -1,7 +1,15 @@
-<h1 class="text-center">All products</h1>
+<h1>All products</h1>
+
+<p>
+  <%= link_to "Home", root_path, class: "btn btn-primary" %>
+  <%= link_to "Add a product", new_product_path, class: "btn btn-success" %>
+</p>
 
 <ul>
   <% @products.each do |product| %>
-    <li><%= product.name %> (<%= product.url %>)</li>
+    <li>
+      <%= link_to product.name, product_path(product) %>
+      (<%= link_to product.url, product.url, target: :_blank %>)
+    </li>
   <% end %>
 </ul>
