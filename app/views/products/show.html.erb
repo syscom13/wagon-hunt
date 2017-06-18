@@ -7,6 +7,11 @@
       <%= @product.tagline %>
       <span class="label label-default"><%= @product.category %></span>
     </p>
+    <% if @product.user %>
+      <p>
+        Posted by : <%= @product.user.email %>
+      </p>
+    <% end %>
     <p><%= link_to "GET IT", @product.url, class: "btn btn-success btn-lg", target: :_blank %></p>
     <p class="light-font">
         <%= link_to "Edit", edit_product_path(@product), class: "btn btn-warning" %>

@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -21,6 +22,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
     if @product.save
       redirect_to products_path
     else

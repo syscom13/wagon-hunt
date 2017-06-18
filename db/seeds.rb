@@ -7,9 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.destroy_all
+User.destroy_all
 
-Product.create!(name: "Google", url: "https://google.com", tagline: "Don't be evil")
-Product.create!(name: "And Co", url: "https://www.and.co/",
-                               tagline: "Invoicing, Expenses, Contracts & Payments for your business")
-Product.create!(name: "Bonsai", url: "https://www.hellobonsai.com", 
-                               tagline: "Free bulletproof contracts for designers & developers")
+nicolas = User.create!(email: "nicolas@test.com", password: "foobar")
+victor = User.create!(email: "victor@test.com", password: "foobar")
+
+Product.create!(user: nicolas, name: "Oristand", url: "https://oristand.co/",
+                               tagline: "A super affordable, portable standing desk ",
+                               category: "design")
+Product.create!(user: nicolas, name: "And Co", url: "https://www.and.co/",
+                               tagline: "Invoicing, Expenses, Contracts & Payments for your business",
+                               category: "tech")
+Product.create!(user: victor, name: "Bonsai", url: "https://www.hellobonsai.com",
+                               tagline: "Free bulletproof contracts for designers & developers",
+                               category: "tech")
+Product.create!(user: victor, name: "Le Wagon", url: "https://www.lewagon.com",
+                               tagline: "Coding bootcamp for entrepreneurs and creative minds",
+                               category: "education")
