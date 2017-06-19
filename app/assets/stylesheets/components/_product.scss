@@ -43,6 +43,18 @@
   font-size: 13px;
   line-height: 20px;
 }
+.product-upvoted, a.product-upvote.product-upvoted  {
+  color: #5898f1;
+}
+.product-upvoted .product-arrow {
+  border-bottom-color: #5898f1;
+}
+a.product-upvote {
+  color: black;
+  &:hover, &:visited, &:active, &:focus {
+    text-decoration: none;
+  }
+}
 .product-count {
   margin: 2px 0 0;
 }
