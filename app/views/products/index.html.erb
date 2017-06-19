@@ -9,9 +9,11 @@
               <div class="product-arrow"></div>
               <div class='product-count'>0</div>
             </div>
-            <img src="<%= image_path "background.jpg" %>"
-                 alt="startup image"
-                 class="product-image hidden-xs">
+            <% if product.photo? %>
+              <%= cl_image_tag(product.photo.path, :height => 117, :crop => :fill, class: "product-image") %>
+            <% else %>
+              <img src="<%= image_path "background.jpg" %>" alt="startup image" class="product-image hidden-xs">
+            <% end %>
 
             <div class='product-body'>
               <h3><%= link_to product.name, product_path(product) %></h3>

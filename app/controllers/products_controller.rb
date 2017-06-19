@@ -36,23 +36,27 @@ class ProductsController < ApplicationController
 
   def update
     # @product = Product.find(params[:id]) i.e find_product
-    if @product.update(product_params)
-      redirect_to products_path
-    else
-      render :edit
+    if @product.user == current_user
+      if @product.update(product_params)
+        redirect_to products_path
+      else
+        render :edit
+      end
     end
   end
 
   def destroy
     # @product = Product.find(params[:id]) i.e find_product
-    @product.destroy
+    if @product.user == current_user
+      @product.destroy
+    end
     redirect_to products_path
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :url, :tagline, :category)
+    params.require(:product).permit(:name, :url, :tagline, :category, :photo)
   end
 
   def find_product

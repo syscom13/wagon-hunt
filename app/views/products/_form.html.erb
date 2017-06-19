@@ -3,6 +3,7 @@
   <%= f.input :url, placeholder: "https://google.com", label: "URL" %>
   <%= f.input :tagline, placeholder: "Don't be evil", label: "Tagline" %>
   <%= f.input :category, collection: ["tech", "education", "design"], prompt: "Choose a category" %>
+  <%= f.input :photo, as: :attachinary %>
   <%= f.button :submit, "Submit", class: "btn btn-primary" %>
   <%= link_to "Back", products_path, class: "btn btn-success" %>
 <% end %>
